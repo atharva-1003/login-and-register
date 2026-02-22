@@ -1,13 +1,17 @@
-name: "Auto-Assign Labeled Issues to Copilot"
+name: "Auto-Assign Issues to Copilot"
 
 on:
   issues:
-    types: [labeled]
+    types: [opened]
   workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to assign'
+        required: true
+        type: string
 
 jobs:
   assign-to-copilot:
-    if: github.event.label.name == 'ai-task'
     runs-on: ubuntu-latest
     steps:
       - name: Assign issue to Copilot agent
@@ -18,6 +22,6 @@ jobs:
             github.rest.issues.addAssignees({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number,
+              issue_number: ${{ inputs.issue_number || github.event.issue.number }},
               assignees: ['copilot-swe-agent[bot]']
             })
