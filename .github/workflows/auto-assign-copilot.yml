@@ -1,11 +1,13 @@
-name: "Auto-Assign Issues to Copilot"
+name: "Auto-Assign Labeled Issues to Copilot"
 
 on:
   issues:
-    types: [opened]
+    types: [labeled]
+  workflow_dispatch:
 
 jobs:
   assign-to-copilot:
+    if: github.event.label.name == 'ai-task'
     runs-on: ubuntu-latest
     steps:
       - name: Assign issue to Copilot agent
