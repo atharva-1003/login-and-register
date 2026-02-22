@@ -22,6 +22,6 @@ jobs:
             github.rest.issues.addAssignees({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: ${{ inputs.issue_number || github.event.issue.number }},
+              issue_number: context.issue.number,
               assignees: ['copilot-swe-agent[bot]']
             })
