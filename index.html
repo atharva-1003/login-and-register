@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Login and Registration MBR Library by AP</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center font-display">
+    <div class="flex flex-col lg:flex-row w-full min-h-screen overflow-hidden bg-white dark:bg-slate-900">
+        <!-- Left Side: Visual Pane (Hidden on mobile) -->
+        <div class="relative hidden lg:flex lg:w-1/2 flex-col justify-between p-12 bg-cover bg-center text-white" style="background-image: linear-gradient(rgba(19, 91, 236, 0.4), rgba(16, 22, 34, 0.8)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUkKZ-l3Eh6DB8AeUGsjT0r4iwr2Pv1rKxfK7mMfICPj8kUmSNkvFMF4_IJGUIu_lZbf0jjIgTEaVjXUYYAngeLshyYK24DDlnUH6ZbW9QLsCASh4e8nUHeNkbkEkPABjRRa3fbfKgxvZdGfSPC3mKdpypaL-3q_u_zOUMUZME-mQ4VG2G-9h5_ON_xKikdWpiD0iRYahIJ9tQGedXxSHmnsIZfntR8M1aT94nDrJbGKVVt3wiDcggKirXyi18OOV57l5NUy5qHyYY');">
+            <div class="z-10 flex items-center gap-3">
+                <div class="bg-primary p-2 rounded-lg">
+                    <span class="material-symbols-outlined text-white text-3xl">auto_stories</span>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight">MBR Library</h2>
+            </div>
+            <div class="z-10 max-w-md">
+                <h1 class="text-5xl font-bold leading-tight mb-6">Your Gateway to Knowledge</h1>
+                <p class="text-lg text-slate-200 leading-relaxed">
+                    Access thousands of books, academic journals, and premium digital resources from anywhere in the world.
+                </p>
+            </div>
+            <div class="z-10 glass-effect p-6 rounded-xl flex items-center gap-4 max-w-sm">
+                <div class="flex -space-x-3">
+                    <img alt="User" class="w-10 h-10 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAViO7PQuzH0SdakwvcH4P6NOnvwBQM5KEC5N3tKE8hwFzwNflJ4teAuBxOibwFis6reOW0zHllkO48f3u1QANyXOt9pxaWLS6Q2qQFGikYh0vSul7ORFctPCzBvO9ZCvEyPubVpdZQDpW-qTpgZMxM1fAIApfZIiOnwGgkklAYqc86pW2yoDl-7C5cHZMEXutkAWU71diXytI5FoeOzlOPeh6Hw7MLRvrigtjrhwPwyVktX-hduE_oUXWISurbM-Sm2AqpRGeTEveg"/>
+                    <img alt="User" class="w-10 h-10 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPTt9Nroupl3P4b93awK8RZ_RpCinkYMD_9AsXrTF7e37zY_93oQCen22YfmPKDOHJtflVF4Vu0vqG_duYK-ykVcwbVm540oL8cQW4Ybsx6tAKI_hXcWotjgV_Sd3p5Ja-0pbSS0e0IW26tpceufhq2nmXFK6fYwT89tNWFyW6enqOUf-BdI232gupS5-PBHPCs093k3ja7a61qaRR5PBKRjuf5Qa-s9ZdnG2gLmgyJZN1A2goi9jkfg33v7NatJkAQOvqKhtoSmU3"/>
+                    <img alt="User" class="w-10 h-10 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9GvuafU36JNJcdlU-KktXFJ5VNg0ytL_dbTz-oN4H5DSX1Ty4Rh-ZNAW8KajHi19svP1nHO4zUP9LOXtPd_e2N7Zp15CgI4RrGdGu6aXNX_lv4Klx63FhR-NHPsnkQ1KBNTEtXGgUA_PUsHPfutDhFFAv-CME7Me0zdzYQ84kcxjhBzmqeVFxP_RNDeXwMjCg3VA0Hjiws15S0JN0Cv06t07-VWEWr7lSVMkY3VOXfzqhthT9OiLCOUQu97T5RG5rm04cTsAlUDHe"/>
+                </div>
+                <p class="text-sm font-medium">Joined by 12,000+ readers this month</p>
+            </div>
+        </div>
+        <!-- Right Side: Form Pane -->
+        <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-6 sm:p-12 lg:p-20 bg-white dark:bg-slate-900">
+            <div class="w-full max-w-md">
+                <!-- Branding for Mobile -->
+                <div class="lg:hidden flex items-center justify-center gap-2 mb-10">
+                    <span class="material-symbols-outlined text-primary text-3xl">auto_stories</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">MBR Library</h2>
+                </div>
+                <div class="text-center mb-10">
+                    <h2 id="form-title" class="text-3xl font-bold text-slate-900 dark:text-white">Welcome back</h2>
+                    <p id="form-description" class="text-slate-500 dark:text-slate-400 mt-2">Enter your credentials to access your library account</p>
+                </div>
+                <!-- Tabs Switcher -->
+                <div class="flex p-1 bg-slate-100 dark:bg-slate-800 rounded-xl mb-8">
+                    <button id="tab-login" class="flex-1 py-2.5 text-sm font-semibold rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm ring-1 ring-slate-200 dark:ring-slate-600 transition-all">
+                        Login
+                    </button>
+                    <button id="tab-signup" class="flex-1 py-2.5 text-sm font-semibold rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all">
+                        Sign Up
+                    </button>
+                </div>
+                <!-- Login Form Content -->
+                <form id="form-login" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="login-email">Email or Library ID</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">mail</span>
+                            <input class="block w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="login-email" name="email" placeholder="name@example.com" type="text" required/>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1.5">
+                            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="login-password">Password</label>
+                            <a class="text-sm font-semibold text-primary hover:text-primary/80" href="#">Forgot password?</a>
+                        </div>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">lock</span>
+                            <input class="password-input block w-full pl-10 pr-12 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="login-password" name="password" placeholder="••••••••" type="password" required/>
+                            <button class="password-toggle absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors" type="button">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <input class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary" id="remember" type="checkbox"/>
+                        <label class="text-sm text-slate-600 dark:text-slate-400" for="remember">Stay signed in for 30 days</label>
+                    </div>
+                    <button class="w-full py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2" type="submit">
+                        Sign In
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </button>
+                </form>
+
+                <!-- Sign Up Form Content (Hidden by default) -->
+                <form id="form-signup" class="space-y-6 hidden">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="signup-name">Full Name</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person</span>
+                            <input class="block w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="signup-name" name="name" placeholder="John Doe" type="text" required/>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="signup-email">Email Address</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">mail</span>
+                            <input class="block w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="signup-email" name="email" placeholder="name@example.com" type="email" required/>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="signup-password">Create Password</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">lock</span>
+                            <input class="password-input block w-full pl-10 pr-12 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="signup-password" name="password" placeholder="••••••••" type="password" required/>
+                            <button class="password-toggle absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors" type="button">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="w-full py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2" type="submit">
+                        Create Account
+                        <span class="material-symbols-outlined text-lg">how_to_reg</span>
+                    </button>
+                </form>
+
+                <!-- Footer Links -->
+                <div class="mt-10 border-t border-slate-100 dark:border-slate-800 pt-8">
+                    <p class="text-center text-sm text-slate-500 dark:text-slate-400">
+                        Don't have a library card?
+                        <a class="text-primary font-bold hover:underline" href="#">Apply online now</a>
+                    </p>
+                    <div class="flex justify-center gap-6 mt-6">
+                        <a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+                            <span class="text-xs font-medium">Terms of Service</span>
+                        </a>
+                        <a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+                            <span class="text-xs font-medium">Privacy Policy</span>
+                        </a>
+                        <a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+                            <span class="text-xs font-medium">Help Center</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
