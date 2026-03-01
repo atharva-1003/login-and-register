@@ -1,10 +1,11 @@
 /* Auth Container - Centers the form */
+/* SCRUM-9: Change login page background to purple */
 .auth-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #6b21a8;
+  background: purple;
   padding: 20px;
 }
 
