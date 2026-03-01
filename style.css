@@ -1,3 +1,4 @@
+/* SCRUM-9: Change login page background to purple */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: purple;
 }
 
 .class-effect {
