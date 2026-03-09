@@ -50,25 +50,26 @@ function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <div className="auth-header">
-          <h1>Welcome Back</h1>
-          <p>Login to your TotalSecurity account</p>
+    <div className="auth-container login-variant">
+      <div className="auth-card login-card">
+        <div className="auth-header login-header">
+          <h1>Sign In</h1>
+          <p>Access your TotalSecurity dashboard</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="auth-form">
+        <form onSubmit={handleSubmit} className="auth-form login-form">
           {error && <div className="error-message">{error}</div>}
-          
+
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter your email"
+              placeholder="Email address"
+              autoComplete="username"
               required
             />
           </div>
@@ -81,30 +82,27 @@ function Login() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Enter your password"
+              placeholder="Password"
+              autoComplete="current-password"
               required
             />
           </div>
 
-          <div className="form-options">
-            <label className="remember-me">
-              <input type="checkbox" />
-              <span>Remember me</span>
-            </label>
+          <div className="form-options login-options">
             <a href="#" className="forgot-password">Forgot password?</a>
           </div>
 
-          <button 
-            type="submit" 
-            className="auth-button"
+          <button
+            type="submit"
+            className="auth-button login-button"
             disabled={loading}
           >
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
 
-        <div className="auth-footer">
-          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+        <div className="auth-footer login-footer">
+          <p>New to TotalSecurity? <Link to="/signup">Create an account</Link></p>
         </div>
       </div>
     </div>
